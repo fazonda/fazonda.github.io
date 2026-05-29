@@ -3,348 +3,32 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ONDA — Aprendizado que acompanha a universidade</title>
+<title>ONDA — Seu primeiro estágio ou trainee começa aqui</title>
+<meta name="description" content="ONDA prepara universitários de São Paulo para o primeiro emprego: currículo, testes, entrevista, dinâmica e cases — com prática real e feedback de IA."/>
+
+<!-- Favicon & app icon -->
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png"/>
+
+<!-- Compartilhamento (Open Graph / Twitter) -->
+<!-- Ao publicar, troque os caminhos relativos abaixo pela URL completa, ex.: https://seuusuario.github.io/onda/assets/onda-mark.png -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="ONDA — do diploma ao primeiro emprego"/>
+<meta property="og:description" content="Prepare-se para cada etapa do processo seletivo de estágio e trainee, com treino ilimitado e feedback de IA."/>
+<meta property="og:image" content="assets/onda-mark.png"/>
+<meta name="twitter:card" content="summary"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-<style>
-  :root {
-    --black: #0a0a0a;
-    --white: #fafafa;
-    --blue: #1a6cff;
-    --blue-dim: #d6e4ff;
-    --gray-100: #f0f0f0;
-    --gray-300: #c8c8c8;
-    --gray-500: #888;
-    --gray-700: #444;
-    --serif: 'DM Serif Display', Georgia, serif;
-    --sans: 'DM Sans', sans-serif;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--sans);
-    background: var(--white);
-    color: var(--black);
-    font-size: 16px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* NAV */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.25rem 3rem;
-    background: rgba(250,250,250,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--gray-100);
-  }
-  .logo {
-    font-family: var(--serif);
-    font-size: 20px;
-    letter-spacing: -0.02em;
-    color: var(--black);
-  }
-  .logo em { font-style: italic; color: var(--blue); }
-  nav ul { list-style: none; display: flex; gap: 2rem; }
-  nav ul a { font-size: 14px; color: var(--gray-700); text-decoration: none; font-weight: 400; transition: color 0.2s; }
-  nav ul a:hover { color: var(--black); }
-  .nav-cta {
-    font-size: 14px;
-    font-weight: 500;
-    background: var(--black);
-    color: var(--white);
-    border: none;
-    padding: 9px 20px;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: background 0.2s;
-    font-family: var(--sans);
-  }
-  .nav-cta:hover { background: var(--blue); }
-
-  /* HERO */
-  .hero {
-    min-height: 92vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border-bottom: 1px solid var(--gray-100);
-  }
-  .hero-left {
-    padding: 7rem 3rem 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-right: 1px solid var(--gray-100);
-  }
-  .hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 2rem;
-  }
-  .hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--blue); }
-  h1 {
-    font-family: var(--serif);
-    font-size: clamp(40px, 5vw, 64px);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    color: var(--black);
-    margin-bottom: 1.5rem;
-  }
-  h1 em { font-style: italic; color: var(--blue); }
-  .hero-sub {
-    font-size: 17px;
-    color: var(--gray-700);
-    line-height: 1.7;
-    max-width: 420px;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-  }
-  .waitlist-form {
-    display: flex;
-    gap: 0;
-    max-width: 420px;
-    border: 1px solid var(--black);
-  }
-  .waitlist-form input {
-    flex: 1;
-    padding: 14px 16px;
-    font-size: 14px;
-    border: none;
-    outline: none;
-    background: var(--white);
-    color: var(--black);
-    font-family: var(--sans);
-  }
-  .waitlist-form input::placeholder { color: var(--gray-500); }
-  .waitlist-form button {
-    padding: 14px 20px;
-    background: var(--black);
-    color: var(--white);
-    border: none;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    white-space: nowrap;
-    font-family: var(--sans);
-    transition: background 0.2s;
-  }
-  .waitlist-form button:hover { background: var(--blue); }
-  .social-proof {
-    margin-top: 1rem;
-    font-size: 13px;
-    color: var(--gray-500);
-  }
-  .social-proof strong { color: var(--black); }
-
-  .hero-right {
-    padding: 5rem 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background: var(--black);
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-number {
-    font-family: var(--serif);
-    font-size: clamp(100px, 14vw, 180px);
-    line-height: 1;
-    color: rgba(255,255,255,0.06);
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    letter-spacing: -0.04em;
-    user-select: none;
-  }
-  .hero-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    position: relative;
-    z-index: 1;
-  }
-  .stat { border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.5rem; }
-  .stat .num {
-    font-family: var(--serif);
-    font-size: 40px;
-    color: var(--white);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .stat .num span { color: var(--blue); }
-  .stat .desc { font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 300; line-height: 1.5; }
-
-  /* SECTION BASE */
-  section { padding: 6rem 3rem; }
-  .section-label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin-bottom: 1rem;
-  }
-  h2 {
-    font-family: var(--serif);
-    font-size: clamp(28px, 3.5vw, 44px);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--black);
-    margin-bottom: 1rem;
-  }
-  h2 em { font-style: italic; color: var(--blue); }
-  .section-intro {
-    font-size: 16px;
-    color: var(--gray-700);
-    font-weight: 300;
-    max-width: 520px;
-    line-height: 1.7;
-    margin-bottom: 3rem;
-  }
-
-  /* TRILHAS */
-  .trilhas { background: var(--white); border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); }
-  .trilhas-header { max-width: 600px; margin-bottom: 3rem; }
-  .tracks-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border: 1px solid var(--gray-100);
-  }
-  .track {
-    padding: 2rem 1.5rem;
-    border-right: 1px solid var(--gray-100);
-    transition: background 0.2s;
-  }
-  .track:last-child { border-right: none; }
-  .track:hover { background: var(--black); }
-  .track:hover .track-num,
-  .track:hover h3,
-  .track:hover .track-desc,
-  .track:hover .track-dur { color: var(--white) !important; }
-  .track:hover .track-num { color: var(--blue) !important; }
-  .track-num {
-    font-family: var(--serif);
-    font-size: 11px;
-    color: var(--blue);
-    letter-spacing: 0.08em;
-    margin-bottom: 2rem;
-    display: block;
-    font-style: italic;
-  }
-  .track h3 { font-size: 15px; font-weight: 500; color: var(--black); margin-bottom: 0.5rem; line-height: 1.3; }
-  .track-desc { font-size: 13px; color: var(--gray-500); line-height: 1.6; font-weight: 300; }
-  .track-dur { display: block; font-size: 12px; color: var(--gray-300); margin-top: 1.5rem; letter-spacing: 0.04em; }
-
-  /* COMO FUNCIONA */
-  .como { background: var(--black); color: var(--white); }
-  .como .section-label { color: var(--blue); }
-  .como h2 { color: var(--white); }
-  .como .section-intro { color: rgba(255,255,255,0.45); }
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    margin-top: 3rem;
-  }
-  .step {
-    padding: 2.5rem 2rem 2.5rem 0;
-    border-right: 1px solid rgba(255,255,255,0.08);
-    padding-right: 2rem;
-  }
-  .step:last-child { border-right: none; }
-  .step-n {
-    font-family: var(--serif);
-    font-size: 48px;
-    color: rgba(255,255,255,0.08);
-    line-height: 1;
-    margin-bottom: 1.5rem;
-  }
-  .step h4 { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 0.5rem; }
-  .step p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; font-weight: 300; }
-
-  /* TESTEMUNHOS */
-  .testemunhos { background: var(--gray-100); border-top: 1px solid var(--gray-300); }
-  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-300); border: 1px solid var(--gray-300); }
-  .testi {
-    background: var(--white);
-    padding: 2rem;
-  }
-  .testi-q {
-    font-family: var(--serif);
-    font-size: 36px;
-    color: var(--blue);
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
-  .testi p { font-size: 14px; color: var(--gray-700); line-height: 1.7; font-weight: 300; margin-bottom: 1.5rem; font-style: italic; }
-  .testi-name { font-size: 13px; font-weight: 500; color: var(--black); }
-  .testi-role { font-size: 12px; color: var(--gray-500); }
-
-  /* CTA FINAL */
-  .cta-final {
-    background: var(--blue);
-    padding: 6rem 3rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-  .cta-final h2 { color: var(--white); font-size: clamp(28px, 3vw, 44px); }
-  .cta-final .section-label { color: rgba(255,255,255,0.6); }
-  .cta-right p { font-size: 15px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 1.5rem; line-height: 1.7; }
-  .cta-final .waitlist-form { border-color: rgba(255,255,255,0.4); }
-  .cta-final .waitlist-form input { background: rgba(255,255,255,0.1); color: var(--white); }
-  .cta-final .waitlist-form input::placeholder { color: rgba(255,255,255,0.4); }
-  .cta-final .waitlist-form button { background: var(--white); color: var(--blue); }
-  .cta-final .waitlist-form button:hover { background: var(--black); color: var(--white); }
-  .cta-final .social-proof { color: rgba(255,255,255,0.5); }
-  .cta-final .social-proof strong { color: var(--white); }
-
-  /* FOOTER */
-  footer {
-    background: var(--black);
-    color: rgba(255,255,255,0.3);
-    padding: 2rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 13px;
-    font-weight: 300;
-  }
-  footer .logo { color: var(--white); font-size: 16px; }
-  footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
-  footer a:hover { color: var(--white); }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  .hero-left > * { animation: fadeUp 0.6s ease both; }
-  .hero-left > *:nth-child(1) { animation-delay: 0.05s; }
-  .hero-left > *:nth-child(2) { animation-delay: 0.15s; }
-  .hero-left > *:nth-child(3) { animation-delay: 0.25s; }
-  .hero-left > *:nth-child(4) { animation-delay: 0.35s; }
-  .hero-left > *:nth-child(5) { animation-delay: 0.45s; }
-</style>
+<link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
 
 <nav>
-  <div class="logo">ON<em>DA</em></div>
+  <a class="logo" href="#top" aria-label="ONDA — início">
+    <img class="logo-mark" src="assets/onda-mark.png" alt=""/>
+    <span>ONDA</span>
+  </a>
   <ul>
     <li><a href="#trilhas">Trilhas</a></li>
     <li><a href="#como">Como funciona</a></li>
@@ -352,11 +36,11 @@
   <button class="nav-cta" onclick="document.getElementById('email-top').focus()">Entrar na lista</button>
 </nav>
 
-<div class="hero">
+<div class="hero" id="top">
   <div class="hero-left">
-    <div class="hero-tag">Universidade · 2026</div>
-    <h1>A onda certa<br>para aprender<br><em>melhor.</em></h1>
-    <p class="hero-sub">ONDA é a edtech para universitários que precisam organizar estudos, dominar disciplinas difíceis e transformar conteúdo em prática.</p>
+    <div class="hero-tag">São Paulo · Estágio &amp; Trainee</div>
+    <h1>A faculdade abre a porta.<br>A ONDA <em>te faz entrar.</em></h1>
+    <p class="hero-sub">O programa para universitários de São Paulo que querem emprego durante a faculdade. Treine cada etapa do processo seletivo com prática real e feedback de IA.</p>
     <div class="waitlist-form">
       <input id="email-top" type="email" placeholder="seu@email.com"/>
       <button onclick="signup('email-top')">Entrar na lista →</button>
@@ -367,16 +51,16 @@
     <div class="hero-number">~</div>
     <div class="hero-stats">
       <div class="stat">
-        <div class="num">15<span>min</span></div>
-        <div class="desc">microaulas para encaixar estudo entre aula, estágio e transporte</div>
+        <div class="num">7<span> etapas</span></div>
+        <div class="desc">do currículo ao painel final — cada fase do processo seletivo treinada</div>
       </div>
       <div class="stat">
-        <div class="num">4<span>×</span></div>
-        <div class="desc">mais clareza com revisão guiada, exercícios e plano semanal</div>
+        <div class="num">24/7</div>
+        <div class="desc">simulações de entrevista e dinâmica de grupo com IA, quando você quiser</div>
       </div>
       <div class="stat">
         <div class="num">IA</div>
-        <div class="desc">feedback personalizado para destravar dúvidas antes da prova</div>
+        <div class="desc">feedback na hora sobre as suas respostas, em português e inglês</div>
       </div>
     </div>
   </div>
@@ -384,33 +68,33 @@
 
 <section class="trilhas" id="trilhas">
   <div class="trilhas-header">
-    <div class="section-label">Trilhas de aprendizado</div>
-    <h2>Estude com ritmo,<br>foco e <em>profundidade</em></h2>
-    <p class="section-intro">Conteúdo pensado para a rotina universitária: aulas curtas, prática imediata e acompanhamento para chegar preparado nas avaliações.</p>
+    <div class="section-label">As trilhas</div>
+    <h2>O que você <em>treina</em></h2>
+    <p class="section-intro">Cada trilha cobre uma etapa real dos processos de estágio e trainee em São Paulo.</p>
   </div>
   <div class="tracks-grid">
     <div class="track">
-      <span class="track-num">01 / Método</span>
-      <h3>Planejamento de estudos</h3>
-      <p class="track-desc">Organize matérias, prazos e revisões em uma rotina que cabe na semana.</p>
-      <span class="track-dur">4 semanas</span>
+      <span class="track-num">01</span>
+      <h3>Currículo &amp; LinkedIn</h3>
+      <p class="track-desc">Um currículo que passa pelos filtros automáticos (Gupy e afins) e um LinkedIn que o recrutador encontra.</p>
+      <span class="track-dur">1 semana</span>
     </div>
     <div class="track">
-      <span class="track-num">02 / Revisão</span>
-      <h3>Provas sem acúmulo</h3>
-      <p class="track-desc">Mapas, resumos ativos e simulados para revisar antes de virar urgência.</p>
-      <span class="track-dur">3 semanas</span>
-    </div>
-    <div class="track">
-      <span class="track-num">03 / Dúvidas</span>
-      <h3>Tutoria com IA</h3>
-      <p class="track-desc">Explique conceitos, pratique exercícios e receba feedback no seu ritmo.</p>
+      <span class="track-num">02</span>
+      <h3>Testes online</h3>
+      <p class="track-desc">Lógica, raciocínio, português, inglês e Excel — os testes que mais eliminam candidatos.</p>
       <span class="track-dur">2 semanas</span>
     </div>
     <div class="track">
-      <span class="track-num">04 / Projeto</span>
-      <h3>Da teoria à prática</h3>
-      <p class="track-desc">Transforme disciplinas em entregáveis, portfólios e projetos acadêmicos.</p>
+      <span class="track-num">03</span>
+      <h3>Entrevista &amp; Dinâmica</h3>
+      <p class="track-desc">Respostas no método STAR, entrevista gravada e como se destacar na dinâmica de grupo.</p>
+      <span class="track-dur">2 semanas</span>
+    </div>
+    <div class="track">
+      <span class="track-num">04</span>
+      <h3>Cases &amp; Painel</h3>
+      <p class="track-desc">Raciocínio de negócio e estrutura para cases de consultoria, trainee e bancos.</p>
       <span class="track-dur">1 semana</span>
     </div>
   </div>
@@ -418,28 +102,28 @@
 
 <section class="como" id="como">
   <div class="section-label">Como funciona</div>
-  <h2>Leve.<br><em>Constante.</em></h2>
-  <p class="section-intro">A ONDA transforma sua carga de matérias em um plano claro, com pequenas sessões de estudo e prática acompanhada.</p>
+  <h2>Do primeiro acesso<br>à <em>oferta.</em></h2>
+  <p class="section-intro">A ONDA organiza a sua preparação em um caminho claro, com prática acompanhada em cada etapa do processo seletivo.</p>
   <div class="steps">
     <div class="step">
       <div class="step-n">01</div>
-      <h4>Monte seu semestre</h4>
-      <p>Adicione disciplinas, datas importantes e objetivos para a ONDA organizar sua rota.</p>
+      <h4>Diagnóstico</h4>
+      <p>Descubra onde você está e quais vagas, empresas e processos combinam com o seu momento.</p>
     </div>
     <div class="step">
       <div class="step-n">02</div>
-      <h4>Aprenda em micromódulos</h4>
-      <p>Conteúdos curtos, resumos ativos e exercícios para estudar em qualquer intervalo.</p>
+      <h4>Trilhas práticas</h4>
+      <p>Avance pelas etapas do processo seletivo com conteúdo curto e exercícios baseados em casos reais.</p>
     </div>
     <div class="step">
       <div class="step-n">03</div>
-      <h4>Pratique com IA</h4>
-      <p>Tire dúvidas, treine resolução de problemas e receba explicações adaptadas.</p>
+      <h4>Treine com IA</h4>
+      <p>Simule entrevistas, dinâmicas e cases quantas vezes quiser e receba feedback na hora.</p>
     </div>
     <div class="step">
       <div class="step-n">04</div>
-      <h4>Chegue preparado</h4>
-      <p>Acompanhe progresso por disciplina e revise no momento certo, antes da prova.</p>
+      <h4>Seja aprovado</h4>
+      <p>Chegue preparado em cada fase e acompanhe a sua evolução até a oferta.</p>
     </div>
   </div>
 </section>
@@ -450,19 +134,19 @@
   <div class="testi-grid">
     <div class="testi">
       <div class="testi-q">"</div>
-      <p>Tenho aula, estágio e trabalho em grupo. O difícil não é querer estudar, é saber o que priorizar primeiro.</p>
+      <p>Quero um trainee, mas mando currículo e nunca me chamam. Não sei o que estou fazendo de errado.</p>
       <div class="testi-name">Larissa M.</div>
       <div class="testi-role">Administração · FGV SP</div>
     </div>
     <div class="testi">
       <div class="testi-q">"</div>
-      <p>Eu entendo a matéria na aula, mas travo quando preciso resolver exercícios sozinho antes da prova.</p>
+      <p>Passo nos testes, mas na entrevista eu travo. Ninguém ensina como responder o que eles perguntam.</p>
       <div class="testi-name">Pedro S.</div>
       <div class="testi-role">Eng. de Produção · Poli USP</div>
     </div>
     <div class="testi">
       <div class="testi-q">"</div>
-      <p>Meus resumos ficam espalhados em mil lugares. Queria uma plataforma que juntasse planejamento, revisão e prática.</p>
+      <p>Sinto que a minha área é difícil pro mercado. Preciso aprender a me vender pra conquistar a primeira vaga.</p>
       <div class="testi-name">Camila R.</div>
       <div class="testi-role">Letras · USP</div>
     </div>
@@ -472,7 +156,7 @@
 <div class="cta-final">
   <div class="cta-left">
     <div class="section-label">Lista de espera</div>
-    <h2>Pronto para surfar<br>o semestre?</h2>
+    <h2>Pronto para a sua<br><em>primeira vaga?</em></h2>
   </div>
   <div class="cta-right">
     <p>Acesso gratuito para os primeiros 500 universitários. Sem cartão de crédito.</p>
@@ -485,9 +169,9 @@
 </div>
 
 <footer>
-  <div class="logo">ON<em>DA</em></div>
+  <div class="logo"><img class="logo-mark" src="assets/onda-mark.png" alt=""/> ONDA</div>
   <div>São Paulo, SP · 2026</div>
-  <div><a href="mailto:contato@ondaeducacao.com.br">contato@ondaeducacao.com.br</a></div>
+  <div><a href="mailto:surfeaonda@gmail.com.br">surfeaonda@gmail.com.br</a></div>
 </footer>
 
 <script>
