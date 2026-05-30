@@ -116,6 +116,27 @@ h1 em { font-style: italic; color: var(--blue); }
   margin-bottom: 2.5rem;
   font-weight: 300;
 }
+.waitlist { max-width: 420px; }
+.waitlist-name {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 14px;
+  border: 1px solid var(--black);
+  border-bottom: none;
+  outline: none;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--sans);
+}
+.waitlist-name::placeholder { color: var(--gray-500); }
+/* Honeypot — hidden from users, catches spam bots */
+.waitlist-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
 .waitlist-form {
   display: flex;
   gap: 0;
@@ -264,6 +285,8 @@ h2 em { font-style: italic; color: var(--blue); }
   border-top: 1px solid rgba(255,255,255,0.1);
   margin-top: 3rem;
 }
+.steps-3 { grid-template-columns: repeat(3, 1fr); }
+.steps-3 .step { border-right: none; }
 .step {
   padding: 2.5rem 2rem 2.5rem 0;
   border-right: 1px solid rgba(255,255,255,0.08);
@@ -310,6 +333,12 @@ h2 em { font-style: italic; color: var(--blue); }
 .cta-final h2 { color: var(--white); font-size: clamp(28px, 3vw, 44px); }
 .cta-final .section-label { color: rgba(255,255,255,0.6); }
 .cta-right p { font-size: 15px; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 1.5rem; line-height: 1.7; }
+.cta-final .waitlist-name {
+  border-color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+}
+.cta-final .waitlist-name::placeholder { color: rgba(255,255,255,0.4); }
 .cta-final .waitlist-form { border-color: rgba(255,255,255,0.4); }
 .cta-final .waitlist-form input { background: rgba(255,255,255,0.1); color: var(--white); }
 .cta-final .waitlist-form input::placeholder { color: rgba(255,255,255,0.4); }

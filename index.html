@@ -28,7 +28,7 @@
   </a>
   <ul>
     <li><a href="#trilhas">Trilhas</a></li>
-    <li><a href="#como">Como funciona</a></li>
+    <li><a href="#extras">O que vem junto</a></li>
   </ul>
   <button class="nav-cta" onclick="document.getElementById('email-top').focus()">Entrar na lista</button>
 </nav>
@@ -38,26 +38,32 @@
     <div class="hero-tag">São Paulo · Estágio &amp; Trainee</div>
     <h1>A faculdade abre a porta.<br>A ONDA <em>te faz entrar.</em></h1>
     <p class="hero-sub">O programa para universitários de São Paulo que querem emprego durante a faculdade. Treine cada etapa do processo seletivo com prática real e feedback de IA.</p>
-    <div class="waitlist-form">
-      <input id="email-top" type="email" placeholder="seu@email.com"/>
-      <button onclick="signup('email-top')">Entrar na lista →</button>
-    </div>
-    <p class="social-proof"><strong>247 universitários</strong> já na lista de espera</p>
+    <form class="waitlist" action="https://formspree.io/f/meeddrjb" method="POST" onsubmit="return signup(event)">
+      <input class="waitlist-name" type="text" name="nome" placeholder="Seu nome" required/>
+      <div class="waitlist-form">
+        <input id="email-top" type="email" name="email" placeholder="seu@email.com" required/>
+        <button type="submit">Entrar na lista →</button>
+      </div>
+      <input type="hidden" name="origem" value="hero"/>
+      <input type="hidden" name="_subject" value="Nova inscrição na lista ONDA"/>
+      <input class="waitlist-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+    </form>
+    <!-- <p class="social-proof"><strong>247 universitários</strong> já na lista de espera</p> -->
   </div>
   <div class="hero-right">
     <div class="hero-number">~</div>
     <div class="hero-stats">
       <div class="stat">
-        <div class="num">7<span> etapas</span></div>
-        <div class="desc">do currículo ao painel final — cada fase do processo seletivo treinada</div>
+        <div class="num">100% online</div>
+        <div class="desc">Te desenvolvendo no seu ritmo, de onde você estiver - e te dando resultado</div>
       </div>
       <div class="stat">
-        <div class="num">24/7</div>
-        <div class="desc">simulações de entrevista e dinâmica de grupo com IA, quando você quiser</div>
+        <div class="num">Grátis</div>
+        <div class="desc">Acesso gratuito para os primeiros universitários</div>
       </div>
       <div class="stat">
-        <div class="num">IA</div>
-        <div class="desc">feedback na hora sobre as suas respostas, em português e inglês</div>
+        <div class="num">PT & EN</div>
+        <div class="desc">Conteúdo disponível em português e inglês</div>
       </div>
     </div>
   </div>
@@ -78,8 +84,8 @@
     </div>
     <div class="track">
       <span class="track-num">02</span>
-      <h3>Testes online</h3>
-      <p class="track-desc">Lógica, raciocínio, português, inglês e Excel — os testes que mais eliminam candidatos.</p>
+      <h3>Conhecimento técnico</h3>
+      <p class="track-desc">Raciocínio analítico, inglês, Excel e SQL - competências técnicas que mais aparecem nos testes e no dia a dia.</p>
       <span class="track-dur">2 semanas</span>
     </div>
     <div class="track">
@@ -90,42 +96,37 @@
     </div>
     <div class="track">
       <span class="track-num">04</span>
-      <h3>Cases &amp; Painel</h3>
+      <h3>Cases</h3>
       <p class="track-desc">Raciocínio de negócio e estrutura para cases de consultoria, trainee e bancos.</p>
       <span class="track-dur">1 semana</span>
     </div>
   </div>
 </section>
 
-<section class="como" id="como">
-  <div class="section-label">Como funciona</div>
-  <h2>Do primeiro acesso<br>à <em>oferta.</em></h2>
-  <p class="section-intro">A ONDA organiza a sua preparação em um caminho claro, com prática acompanhada em cada etapa do processo seletivo.</p>
-  <div class="steps">
+<section class="como" id="extras">
+  <div class="section-label">O que vem junto</div>
+  <h2>Você não treina<br><em>sozinho.</em></h2>
+  <p class="section-intro">Em paralelo às trilhas, esses serviços te aproximam das vagas certas e de quem já chegou lá.</p>
+  <div class="steps steps-3">
     <div class="step">
       <div class="step-n">01</div>
-      <h4>Diagnóstico</h4>
-      <p>Descubra onde você está e quais vagas, empresas e processos combinam com o seu momento.</p>
+      <h4>Radar pessoal de vagas</h4>
+      <p>Vagas abertas em SP que combinam com você, toda semana.</p>
     </div>
     <div class="step">
       <div class="step-n">02</div>
-      <h4>Trilhas práticas</h4>
-      <p>Avance pelas etapas do processo seletivo com conteúdo curto e exercícios baseados em casos reais.</p>
+      <h4>Mentorias com a área</h4>
+      <p>Conversas com profissionais da área do seu interesse, que já passaram pelo processo.</p>
     </div>
     <div class="step">
       <div class="step-n">03</div>
-      <h4>Treine com IA</h4>
-      <p>Simule entrevistas, dinâmicas e cases quantas vezes quiser e receba feedback na hora.</p>
-    </div>
-    <div class="step">
-      <div class="step-n">04</div>
-      <h4>Seja aprovado</h4>
-      <p>Chegue preparado em cada fase e acompanhe a sua evolução até a oferta.</p>
+      <h4>Network</h4>
+      <p>Surfe junto com outras pessoas fazendo parte da nossa comunidade.</p>
     </div>
   </div>
 </section>
 
-<section class="testemunhos">
+<!-- <section class="testemunhos">
   <div class="section-label">O problema que resolvemos</div>
   <h2 style="margin-bottom:2rem">O que universitários<br><em>realmente</em> sentem</h2>
   <div class="testi-grid">
@@ -148,7 +149,7 @@
       <div class="testi-role">Letras · USP</div>
     </div>
   </div>
-</section>
+</section> -->
 
 <div class="cta-final">
   <div class="cta-left">
@@ -156,12 +157,18 @@
     <h2>Pronto para a sua<br><em>primeira vaga?</em></h2>
   </div>
   <div class="cta-right">
-    <p>Acesso gratuito para os primeiros 500 universitários. Sem cartão de crédito.</p>
-    <div class="waitlist-form">
-      <input id="email-bottom" type="email" placeholder="seu@email.com"/>
-      <button onclick="signup('email-bottom')">Garantir minha vaga →</button>
-    </div>
-    <p class="social-proof" style="margin-top:0.75rem"><strong>247 universitários</strong> já na lista</p>
+    <!-- <p>Acesso gratuito para os primeiros 500 universitários. Sem cartão de crédito.</p> -->
+    <form class="waitlist" action="https://formspree.io/f/meeddrjb" method="POST" onsubmit="return signup(event)">
+      <input class="waitlist-name" type="text" name="nome" placeholder="Seu nome" required/>
+      <div class="waitlist-form">
+        <input id="email-bottom" type="email" name="email" placeholder="seu@email.com" required/>
+        <button type="submit">Garantir minha vaga →</button>
+      </div>
+      <input type="hidden" name="origem" value="cta-final"/>
+      <input type="hidden" name="_subject" value="Nova inscrição na lista ONDA"/>
+      <input class="waitlist-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+    </form>
+    <!-- <p class="social-proof" style="margin-top:0.75rem"><strong>247 universitários</strong> já na lista</p> -->
   </div>
 </div>
 
@@ -172,20 +179,37 @@
 </footer>
 
 <script>
-function signup(id) {
-  const input = document.getElementById(id);
-  const email = input.value.trim();
+async function signup(event) {
+  event.preventDefault();
+  const form = event.target;
+  const emailInput = form.email;
+  const email = emailInput.value.trim();
   if (!email || !email.includes('@')) {
-    input.style.outline = '2px solid #ff3b30';
-    setTimeout(() => input.style.outline = '', 1500);
-    return;
+    emailInput.style.outline = '2px solid #ff3b30';
+    setTimeout(() => emailInput.style.outline = '', 1500);
+    return false;
   }
-  const btn = input.nextElementSibling;
-  btn.textContent = 'Na lista ✓';
-  btn.style.background = '#0a0a0a';
-  btn.style.color = '#fafafa';
-  input.disabled = true;
+  const btn = form.querySelector('button[type="submit"]');
+  const original = btn.textContent;
+  btn.textContent = 'Enviando…';
   btn.disabled = true;
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (!res.ok) throw new Error('Falha no envio');
+    btn.textContent = 'Na lista ✓';
+    btn.style.background = '#0a0a0a';
+    btn.style.color = '#fafafa';
+    form.querySelectorAll('input').forEach(i => i.disabled = true);
+  } catch (err) {
+    btn.textContent = 'Tente de novo';
+    btn.disabled = false;
+    setTimeout(() => btn.textContent = original, 2000);
+  }
+  return false;
 }
 </script>
 
