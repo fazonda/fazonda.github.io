@@ -71,6 +71,16 @@ nav ul a:hover { color: var(--black); }
   font-family: var(--sans);
 }
 .nav-cta:hover { background: var(--blue); }
+.nav-right { display: flex; align-items: center; gap: 1.25rem; }
+.nav-social { display: flex; align-items: center; gap: 0.85rem; }
+.nav-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-700);
+  transition: color 0.2s;
+}
+.nav-social a:hover { color: var(--blue); }
 
 /* HERO */
 .hero {
@@ -362,6 +372,15 @@ footer .logo { color: var(--white); font-size: 16px; }
 footer .logo-mark { width: 26px; height: 26px; }
 footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
 footer a:hover { color: var(--white); }
+.footer-social { display: flex; align-items: center; gap: 1rem; }
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.45);
+  transition: color 0.2s;
+}
+.footer-social a:hover { color: var(--white); }
 
 /* ANIMATIONS */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
