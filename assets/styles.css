@@ -313,6 +313,13 @@ h2 em { font-style: italic; color: var(--blue); }
 .step h4 { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 0.5rem; }
 .step p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; font-weight: 300; }
 
+/* MENTOR */
+.mentor { background: var(--gray-100); color: var(--black); border-top: 1px solid var(--gray-300); border-bottom: 1px solid var(--gray-300); }
+.mentor .steps { border-top: 1px solid var(--gray-300); }
+.mentor .step-n { color: var(--gray-300); }
+.mentor .step h4 { color: var(--black); }
+.mentor .step p { color: var(--gray-500); }
+
 /* TESTEMUNHOS */
 .testemunhos { background: var(--gray-100); border-top: 1px solid var(--gray-300); }
 .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-300); border: 1px solid var(--gray-300); }
